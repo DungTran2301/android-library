@@ -65,9 +65,9 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.github.dungtran2301'
+                groupId = 'com.github.DungTran2301'
                 artifactId = 'core'
-                version = '1.0.0'
+                version = '1.0.0-test.2'
             }
         }
     }
