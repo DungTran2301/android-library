@@ -66,8 +66,8 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId = 'com.github.DungTran2301'
-                artifactId = 'core'
-                version = '1.0.0-test.2'
+                artifactId = 'android-library'
+                version = '1.0.0-test.3'
             }
         }
     }
