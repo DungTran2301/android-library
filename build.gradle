@@ -1,0 +1,84 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = '1.7.20'
+    ext.nav_version = '2.5.3'
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.44'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+
+    configurations.all {
+        resolutionStrategy {
+            force "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    nav_version = '2.5.3'
+    retrofit = '2.9.0'
+    okhttp = '5.0.0-alpha.10'
+    room_version = '2.5.1'
+    glide_version = '4.13.0'
+    event_bus_version = '3.3.1'
+
+    nav_component_lib = [
+            "androidx.navigation:navigation-fragment:$nav_version",
+            "androidx.navigation:navigation-ui-ktx:$nav_version"
+    ]
+
+    retrofit_lib = [
+            "com.squareup.retrofit2:retrofit:$retrofit",
+            "com.squareup.retrofit2:converter-gson:$retrofit",
+            "com.squareup.retrofit2:converter-simplexml:$retrofit",
+            "com.squareup.retrofit2:converter-scalars:$retrofit",
+            "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2",
+            "com.squareup.retrofit2:converter-moshi:$retrofit"
+    ]
+
+    okhttp_lib = [
+            "com.squareup.okhttp3:okhttp:$okhttp",
+            "com.squareup.okhttp3:logging-interceptor:$okhttp",
+            'com.google.code.gson:gson:2.8.6',
+            'org.jsoup:jsoup:1.13.1',
+            'com.squareup.okio:okio:3.1.0'
+    ]
+
+
+    glide_lib = [
+            "com.github.bumptech.glide:glide:$glide_version"
+    ]
+
+    glide_annotation = [
+            "com.github.bumptech.glide:compiler:$glide_version"
+    ]
+
+    room_lib = [
+            "androidx.room:room-ktx:$room_version"
+    ]
+
+    room_runtime = [
+            "androidx.room:room-compiler:$room_version"
+    ]
+
+    room_annotation = [
+            "androidx.room:room-compiler:$room_version"
+    ]
+
+    event_bus_lib = [
+            "org.greenrobot:eventbus:$event_bus_version"
+    ]
+}
